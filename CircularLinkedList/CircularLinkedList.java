@@ -110,6 +110,37 @@ public class CircularLinkedList {
         return element;
     }
 
+    public int removeAt(int position) {
+        int element = -1;
+        if (position <= 0 || position >= length()) {
+            return element;
+        }
+
+        if (isEmpty()) {
+            return element;
+        }
+
+        if (length() == 1) {
+            element = head.element;
+            head = null;
+            tail = null;
+        } else if (length() > 1){
+            Node p = head;
+            int i = 1;
+            while(i < position - 1) {
+                p = p.next;
+                i++;
+            }
+
+            element = p.next.element;
+            p.next = p.next.next;
+
+        }
+
+        size = size - 1;
+        return element;
+    }
+
     public void display() {
         Node p = head;
         int i = 0;
