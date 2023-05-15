@@ -53,7 +53,7 @@ public class DoublyLinkedList {
     }
 
     public void insert(int element, int position) {
-        if (position <= 0 || position >= size)
+        if (position <= 0 || position >= size - 1)
             return;
 
         Node newest = new Node(element, null, null);
@@ -111,7 +111,7 @@ public class DoublyLinkedList {
 
     public int delete(int position) {
         int value = -1;
-        if (position <= 0 || position >= size)
+        if (position <= 0 || position >= size - 1)
             return value;
 
         int i = 1;
